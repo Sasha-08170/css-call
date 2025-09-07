@@ -1,263 +1,201 @@
+:root {
+  /* Позиции и размеры кнопки */
+  --rngst-button-bottom: calc(17% - 12.75px);
+  --rngst-button-left: calc(87% - 60.25px);
+  --rngst-button-display: block;
+  --rngst-button-height: 150px;
+  --rngst-button-width: 150px;
+  --rngst-button-margin-bottom: 25px;
+  --rngst-button-margin-right: 25px;
+  --rngst-backface-visibility: hidden;
+  --rngst-transform-translateZ: translateZ(0);
+  --rngst-opacity-default: 0.8;
+  --rngst-opacity-hover: 1;
+  --rngst-transition-all: all 0.3s ease-in-out;
+  --rngst-z-index-button: 999990;
+  --rngst-transform-origin: 50% 50% 0;
+
+  /* fill / circle */
+  --rngst-fill-height: 120px;
+  --rngst-fill-width: 120px;
+  --rngst-fill-bg: #0ec357;
+  --rngst-fill-border-radius: 50%;
+  --rngst-fill-top: 40px;
+  --rngst-fill-left: 40px;
+  --rngst-fill-z-index: 999991;
+
+  /* body (внутренняя часть) */
+  --rngst-body-height: 60px;
+  --rngst-body-width: 60px;
+  --rngst-body-left: 70px;
+  --rngst-body-top: 70px;
+  --rngst-body-border-radius: 50%;
+  --rngst-body-z-index: 999992;
+  --rngst-box-shadow-default: 0 0 0 15px rgba(14, 195, 87, 0);
+  --rngst-box-shadow-hover: 0 0 0 0 rgba(14, 195, 87, 1);
+  --rngst-box-shadow-transition: box-shadow 0.8s ease-in-out;
+  --rngst-body-bg: var(--rngst-fill-bg);
+
+  /* circle */
+  --rngst-circle-height: 70px;
+  --rngst-circle-width: 70px;
+  --rngst-circle-left: 65px;
+  --rngst-circle-top: 65px;
+  --rngst-circle-z-index: 999991;
+  --rngst-circle-border: 1px solid var(--rngst-fill-bg);
+
+  /* icon */
+  --rngst-icon-width: 60px;
+  --rngst-icon-height: 60px;
+  --rngst-icon-top: 70px;
+  --rngst-icon-left: 70px;
+  --rngst-icon-bg-image: url(./phone_icon.png);
+  --rngst-icon-bg-position: center center;
+  --rngst-icon-bg-repeat: no-repeat;
+  --rngst-icon-z-index: 999993;
+  --rngst-icon-text-shadow: 0 0 12px rgba(255, 255, 255, 1);
+
+  /* анимации */
+  --rngst-animation-name-1: ringostat_pulse;
+  --rngst-animation-name-2: ringostat_pulse2;
+  --rngst-animation-duration: 2.5s;
+  --rngst-animation-iteration: infinite;
+  --rngst-animation-timing: ease-in-out;
+
+  /* keyframes: значения трансформации и opacity */
+  --rngst-scale-0: 0.5;
+  --rngst-opacity-0: 0.3;
+  --rngst-scale-50: 0.7;
+  --rngst-opacity-50: 0.2;
+  --rngst-opacity-100: 0;
+
+  --rngst-scale2-0: 2;
+  --rngst-opacity2-0: 0;
+  --rngst-scale2-100: 0.6;
+  --rngst-opacity2-100: 0.8;
+}
+
+/* === Button === */
 .rngst_phone_button {
   position: fixed;
-  bottom: calc(17% - 12.75px);
-  left: calc(87% - 60.25px);
-  display: block;
-  height: 150px;
-  width: 150px;
-  margin-bottom: 25px;
-  margin-right: 25px;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  opacity: 0.8;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  z-index: 999990 !important;
-  transform-origin: 50% 50% 0;
+  bottom: var(--rngst-button-bottom);
+  left: var(--rngst-button-left);
+  display: var(--rngst-button-display);
+  height: var(--rngst-button-height);
+  width: var(--rngst-button-width);
+  margin-bottom: var(--rngst-button-margin-bottom);
+  margin-right: var(--rngst-button-margin-right);
+  backface-visibility: var(--rngst-backface-visibility);
+  transform: var(--rngst-transform-translateZ);
+  opacity: var(--rngst-opacity-default);
+  transition: var(--rngst-transition-all);
+  z-index: var(--rngst-z-index-button) !important;
+  transform-origin: var(--rngst-transform-origin);
 }
 
 .rngst_phone_button:hover {
-  opacity: 1;
+  opacity: var(--rngst-opacity-hover);
 }
 
+/* === Fill (пульсирующая заливка) === */
 .rngst_phone_fill {
-  height: 120px;
-  width: 120px;
-  background: #0ec357;
-  border-radius: 50%;
+  height: var(--rngst-fill-height);
+  width: var(--rngst-fill-width);
+  background: var(--rngst-fill-bg);
+  border-radius: var(--rngst-fill-border-radius);
   position: absolute;
-  top: 40px;
-  left: 40px;
-  z-index: 999991;
-  -webkit-animation: ringostat_pulse 2.5s infinite ease-in-out;
-  -moz-animation: ringostat_pulse 2.5s infinite ease-in-out;
-  -ms-animation: ringostat_pulse 2.5s infinite ease-in-out;
-  -o-animation: ringostat_pulse 2.5s infinite ease-in-out;
-  animation: ringostat_pulse 2.5s infinite ease-in-out;
-  transform-origin: 50% 50% 0;
+  top: var(--rngst-fill-top);
+  left: var(--rngst-fill-left);
+  z-index: var(--rngst-fill-z-index);
+  animation: var(--rngst-animation-name-1) var(--rngst-animation-duration)
+    var(--rngst-animation-iteration) var(--rngst-animation-timing);
+  transform-origin: var(--rngst-transform-origin);
 }
 
+/* === Body (центральная часть) === */
 .rngst_phone_body {
-  height: 60px;
-  width: 60px;
+  height: var(--rngst-body-height);
+  width: var(--rngst-body-width);
   position: absolute;
-  left: 70px;
-  top: 70px;
-  border-radius: 50%;
-  z-index: 999992;
-  box-shadow: 0 0 0 15px rgba(14, 195, 87, 0);
-  -webkit-box-shadow: 0 0 0 15px rgba(14, 195, 87, 0);
-  -moz-box-shadow: 0 0 0 15px rgba(14, 195, 87, 0);
-  -ms-box-shadow: 0 0 0 15px rgba(14, 195, 87, 0);
-  -o-box-shadow: 0 0 0 15px rgba(14, 195, 87, 0);
-  box-shadow: 0 0 0 15px rgba(14, 195, 87, 0);
-  -webkit-transition: box-shadow 0.8s ease-in-out;
-  -moz-transition: box-shadow 0.8s ease-in-out;
-  -ms-transition: box-shadow 0.8s ease-in-out;
-  -o-transition: box-shadow 0.8s ease-in-out;
-  transition: box-shadow 0.8s ease-in-out;
-  background: #0ec357;
-  transform-origin: 50% 50% 0;
+  left: var(--rngst-body-left);
+  top: var(--rngst-body-top);
+  border-radius: var(--rngst-body-border-radius);
+  z-index: var(--rngst-body-z-index);
+  box-shadow: var(--rngst-box-shadow-default);
+  transition: var(--rngst-box-shadow-transition);
+  background: var(--rngst-body-bg);
+  transform-origin: var(--rngst-transform-origin);
 }
 
 .rngst_phone_button:hover .rngst_phone_body {
-  background: #0ec357;
-  -webkit-box-shadow: 0 0 0 0 rgba(14, 195, 87, 1);
-  -moz-box-shadow: 0 0 0 0 rgba(14, 195, 87, 1);
-  -ms-box-shadow: 0 0 0 0 rgba(14, 195, 87, 1);
-  -o-box-shadow: 0 0 0 0 rgba(14, 195, 87, 1);
-  box-shadow: 0 0 0 0 rgba(14, 195, 87, 1);
+  background: var(--rngst-body-bg);
+  box-shadow: var(--rngst-box-shadow-hover);
 }
 
+/* === Circle === */
 .rngst_phone_circle {
-  background: #0ec357;
-  height: 70px;
-  width: 70px;
+  background: var(--rngst-fill-bg);
+  height: var(--rngst-circle-height);
+  width: var(--rngst-circle-width);
   position: absolute;
-  left: 65px;
-  top: 65px;
-  z-index: 999991;
-  border: 1px solid #0ec357;
+  left: var(--rngst-circle-left);
+  top: var(--rngst-circle-top);
+  z-index: var(--rngst-circle-z-index);
+  border: var(--rngst-circle-border);
   border-radius: 50%;
-  -webkit-animation: ringostat_pulse2 2.5s infinite ease-in-out;
-  -moz-animation: ringostat_pulse2 2.5s infinite ease-in-out;
-  -ms-animation: ringostat_pulse2 2.5s infinite ease-in-out;
-  -o-animation: ringostat_pulse2 2.5s infinite ease-in-out;
-  animation: ringostat_pulse2 2.5s infinite ease-in-out;
-  transform-origin: 50% 50% 0;
+  animation: var(--rngst-animation-name-2) var(--rngst-animation-duration)
+    var(--rngst-animation-iteration) var(--rngst-animation-timing);
+  transform-origin: var(--rngst-transform-origin);
 }
 
 .rngst_phone_circle2 {
-  background: #0ec357;
-  transform-origin: 50% 50% 0;
+  background: var(--rngst-fill-bg);
+  transform-origin: var(--rngst-transform-origin);
 }
 
+/* === Icon === */
 .rngst_phone_icon {
   cursor: pointer;
-  width: 60px;
-  height: 60px;
-  top: 70px;
-  left: 70px;
+  width: var(--rngst-icon-width);
+  height: var(--rngst-icon-height);
+  top: var(--rngst-icon-top);
+  left: var(--rngst-icon-left);
   position: absolute;
-  background-image: url(./phone_icon.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-  z-index: 999993;
-  transform-origin: 50% 50% 0;
+  background-image: var(--rngst-icon-bg-image);
+  background-position: var(--rngst-icon-bg-position);
+  background-repeat: var(--rngst-icon-bg-repeat);
+  z-index: var(--rngst-icon-z-index);
+  transform-origin: var(--rngst-transform-origin);
 }
 
 .rngst_phone_button:hover .rngst_phone_icon {
-  -webkittext-shadow: 0 0 12px rgba(255, 255, 255, 1);
-  -moz-text-shadow: 0 0 12px rgba(255, 255, 255, 1);
-  -ms-text-shadow: 0 0 12px rgba(255, 255, 255, 1);
-  -o-text-shadow: 0 0 12px rgba(255, 255, 255, 1);
-  text-shadow: 0 0 12px rgba(255, 255, 255, 1);
+  text-shadow: var(--rngst-icon-text-shadow);
 }
 
-@-webkit-keyframes ringostat_pulse {
-  0% {
-    -webkit-transform: scale(0.5);
-    opacity: 0.3;
-  }
-
-  50% {
-    -webkit-transform: scale(0.7);
-    opacity: 0.2;
-  }
-
-  100% {
-    -webkit-transform: scale(0.5);
-    opacity: 0;
-  }
-}
-
-@-moz-keyframes ringostat_pulse {
-  0% {
-    -moz-transform: scale(0.5);
-    opacity: 0.3;
-  }
-
-  50% {
-    -moz-transform: scale(0.7);
-    opacity: 0.2;
-  }
-
-  100% {
-    -moz-transform: scale(0.5);
-    opacity: 0;
-  }
-}
-
-@-o-keyframes ringostat_pulse {
-  0% {
-    -o-transform: scale(0.5);
-    opacity: 0.3;
-  }
-
-  50% {
-    -o-transform: scale(0.7);
-    opacity: 0.2;
-  }
-
-  100% {
-    -o-transform: scale(0.5);
-    opacity: 0;
-  }
-}
-
-@-ms-keyframes ringostat_pulse {
-  0% {
-    -ms-transform: scale(0.5);
-    opacity: 0.3;
-  }
-
-  50% {
-    -ms-transform: scale(0.7);
-    opacity: 0.2;
-  }
-
-  100% {
-    -ms-transform: scale(0.5);
-    opacity: 0;
-  }
-}
-
+/* === Keyframes: pulse 1 === */
 @keyframes ringostat_pulse {
   0% {
-    transform: scale(0.5);
-    opacity: 0.3;
+    transform: scale(var(--rngst-scale-0));
+    opacity: var(--rngst-opacity-0);
   }
-
   50% {
-    transform: scale(0.7);
-    opacity: 0.2;
+    transform: scale(var(--rngst-scale-50));
+    opacity: var(--rngst-opacity-50);
   }
-
   100% {
-    transform: scale(0.5);
-    opacity: 0;
+    transform: scale(var(--rngst-scale-0));
+    opacity: var(--rngst-opacity-100);
   }
 }
 
-@-webkit-keyframes ringostat_pulse2 {
-  0% {
-    -webkit-transform: scale(2);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: scale(0.6);
-    opacity: 0.8;
-  }
-}
-
-@-moz-keyframes ringostat_pulse2 {
-  0% {
-    -moz-transform: scale(2);
-    opacity: 0;
-  }
-
-  100% {
-    -moz-transform: scale(0.6);
-    opacity: 0.8;
-  }
-}
-
-@-o-keyframes ringostat_pulse2 {
-  0% {
-    -o-transform: scale(2);
-    opacity: 0;
-  }
-
-  100% {
-    -o-transform: scale(0.6);
-    opacity: 0.8;
-  }
-}
-
-@-ms-keyframes ringostat_pulse2 {
-  0% {
-    -ms-transform: scale(2);
-    opacity: 0;
-  }
-
-  100% {
-    -ms-transform: scale(0.6);
-    opacity: 0.8;
-  }
-}
-
+/* === Keyframes: pulse 2 === */
 @keyframes ringostat_pulse2 {
   0% {
-    transform: scale(2);
-    opacity: 0;
+    transform: scale(var(--rngst-scale2-0));
+    opacity: var(--rngst-opacity2-0);
   }
-
   100% {
-    transform: scale(0.6);
-    opacity: 0.8;
+    transform: scale(var(--rngst-scale2-100));
+    opacity: var(--rngst-opacity2-100);
   }
 }
